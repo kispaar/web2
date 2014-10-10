@@ -6,8 +6,8 @@ echo "last name:".$_POST['lname'];
 echo '<br/>';
 echo "salary:".$_POST['salary'];
 echo '<br/>';
-$deductions;
-$salary=$_POST['salary'];
+$deductions=0;
+$salary=(int)$_POST['salary'];
 
 if(isset($_POST['paye'])){
     echo "paying PAYE";
@@ -19,4 +19,4 @@ if(isset($_POST['nssf'])){
     $deductions +=$salary*(5/100);
 }
 echo '<br/>';
-echo "your net salary is:...".$salary-$deductions;
+echo "your net salary is:...".($salary-$deductions);
